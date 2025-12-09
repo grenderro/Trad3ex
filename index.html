@@ -104,11 +104,11 @@
             bottom: 0;
             /* Dark purple gradient overlay to tint the image and ensure text visibility */
             background: linear-gradient(rgba(43, 0, 79, 0.9), rgba(26, 0, 51, 0.9));
-            z-index: 1;
+            z-index: 2;
         }
         
         .card-icon, .card-content {
-            z-index: 2; /* Keep content above the overlay */
+            z-index: 1; /* Keep content above the overlay */
             position: relative;
         }
         
@@ -306,5 +306,6 @@
 </body>
 
 </html>
+
 
 
