@@ -102,8 +102,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /* Dark purple gradient overlay to tint the image and ensure text visibility */
-            background: linear-gradient(rgba(43, 0, 79, 0.9), rgba(26, 0, 51, 0.9));
+            /* CHANGE: Replaced opaque purple with fully transparent background */
+    background: transparent; /* Changed from linear-gradient(...) */
             z-index: 1;
         }
         
@@ -306,6 +306,7 @@
 </body>
 
 </html>
+
 
 
 
