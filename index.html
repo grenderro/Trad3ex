@@ -207,15 +207,45 @@
             text-shadow: 0 0 5px rgba(0, 255, 144, 0.5); 
             background: rgba(0, 0, 0, 0.7);
         }
+        /* --- NEW STYLES FOR LOGO AND TITLE --- */
+.header-title-container {
+    display: flex; /* Enable horizontal alignment */
+    align-items: center; /* Vertically center the logo and text */
+    justify-content: center; /* Center the whole block horizontally */
+    margin-bottom: 10px; /* Spacing below the title/logo */
+}
+
+.header-logo {
+    /* Set the size of your logo (adjust as needed) */
+    width: 60px; 
+    height: auto; 
+    margin-right: 15px; /* Space between logo and title */
+    
+    /* Add the same neon glow effect to the logo */
+    filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+/* Adjust the existing h1 rule to remove conflicting margins/sizing */
+header h1 { 
+    font-size: 3em; 
+    margin: 0; /* Important: Remove default h1 margin */
+    color: var(--primary-color); 
+    text-transform: uppercase; 
+    letter-spacing: 5px; 
+    text-shadow: 0 0 10px var(--primary-color), 0 0 15px rgba(255, 255, 255, 0.8); 
+}
     </style>
 </head>
 <body>
 
     <header>
+    <div class="header-title-container">
+        <img src="https://sapphire-acute-anaconda-630.mypinata.cloud/ipfs/bafybeiegq45s2v4qixkghaz74ttknojllmw75wmb2wxl6bqyvyccfa2eve" alt="Trad3Ex Logo" class="header-logo">
         <h1>Trad3Ex</h1>
-        <p class="logo-placeholder">:: MULTIVERSX SERVICES ::</p> 
-        <p>YOUR PREMIUM PARTNER FOR LAUNCHING, MANAGING, AND MAXIMIZING YOUR ASSETS ON THE **MULTIVERSX BLOCKCHAIN**.</p>
-    </header>
+    </div>
+    <p class="logo-placeholder">:: MULTIVERSX SERVICES ::</p> 
+    <p>YOUR PREMIUM PARTNER FOR LAUNCHING, MANAGING, AND MAXIMIZING YOUR ASSETS ON THE **MULTIVERSX BLOCKCHAIN**.</p>
+   </header>
 
     <div class="services-section">
         <h2>:: SERVICES ::</h2>
@@ -309,6 +339,7 @@
 </body>
 
 </html>
+
 
 
 
