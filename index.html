@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trad3Ex - MultiversX Blockchain Services</title>
@@ -76,6 +77,26 @@
             background-size: cover; 
             background-position: center center;
         }
+        .social-links {
+    display: flex;
+    gap: 40px; /* Increased space for icons */
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    color: var(--text-light); /* White */
+    font-size: 2em; /* Makes icons large and visible */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+.social-icon:hover {
+    color: #00FF90; /* Brand Green on hover */
+    filter: drop-shadow(0 0 12px #00FF90);
+    transform: scale(1.2); /* Slight grow effect */
+}
         
         /* Initial positions (off-screen) and Final positions (slid-in) CSS remains the same */
         .slide-from-right { transform: translateX(100px); }
@@ -256,8 +277,21 @@ header h1 {
     </div>
 
     <footer>
+    <div class="social-links">
+        <a href="https://discord.gg/zPvTKrdWpB" target="_blank" class="social-icon">
+            <i class="fa-brands fa-discord"></i>
+        </a>
+        <a href="https://t.me/Trad3EX" target="_blank" class="social-icon">
+            <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="https://x.com/Trad3EX" target="_blank" class="social-icon">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+    </div>
+    <div class="footer-text">
         &copy; 2025 TRAD3EX. ALL RIGHTS RESERVED. BUILT FOR THE MULTIVERSX ECOSYSTEM.
-    </footer>
+    </div>
+</footer>
 
     <script>
         const services = [
@@ -340,6 +374,7 @@ header h1 {
 </body>
 
 </html>
+
 
 
 
