@@ -184,7 +184,24 @@
         .services-section { padding: 50px 20px; text-align: center; }
         .services-section h2 { font-size: 2.5em; margin-bottom: 50px; color: var(--text-light); position: relative; display: inline-block; text-shadow: 0 0 8px rgba(0, 255, 144, 0.6); }
         .services-section h2::after { content: ''; width: 80px; height: 4px; background-color: var(--primary-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 2px; box-shadow: 0 0 10px var(--primary-color); }
-        .vertical-container { display: flex; flex-direction: column; align-items: center; gap: 25px; max-width: 800px; margin: 0 auto; padding: 20px 0; }
+        .vertical-container {
+    display: grid;
+    /* This creates two equal columns */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    /* Increased max-width to fit two cards side-by-side */
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Responsive: Back to 1 column on tablets and phones */
+@media (max-width: 900px) {
+    .vertical-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
         
         .service-card:hover {
             transform: translateY(-5px); 
@@ -309,26 +326,27 @@ header h1 {
         const container = document.getElementById('services-container');
 
         services.forEach((service, index) => {
-            const card = document.createElement('a');
-            // Add the specialClass (now every card has one)
-            card.className = `service-card ${service.specialClass || ''}`;
-            card.href = service.url;
-            
-            // Assign slide direction based on index (even/odd)
-            if (index % 2 === 0) {
-                card.classList.add('slide-from-right');
-            } else {
-                card.classList.add('slide-from-left'); 
-            }
-            
-            card.innerHTML = `
-                <div class="card-content">
-                    <h3>${service.name}</h3>
-                    <p>${service.description}</p>
-                </div>
-            `;
-            container.appendChild(card);
-        });
+    const card = document.createElement('a');
+    card.className = `service-card ${service.specialClass || ''}`;
+    card.href = service.url;
+    
+    // NEW LOGIC: 
+    // Even index (0, 2, 4) = Left Column -> Slide from Left
+    // Odd index (1, 3, 5) = Right Column -> Slide from Right
+    if (index % 2 === 0) {
+        card.classList.add('slide-from-left'); 
+    } else {
+        card.classList.add('slide-from-right'); 
+    }
+    
+    card.innerHTML = `
+        <div class="card-content">
+            <h3>${service.name}</h3>
+            <p>${service.description}</p>
+        </div>
+    `;
+    container.appendChild(card);
+});
 
         // --- Intersection Observer Logic for Animation ---
         const observerOptions = {
@@ -373,6 +391,36 @@ header h1 {
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
